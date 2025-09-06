@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
@@ -9,8 +10,8 @@ app.use(cors()); // In production, configure this for specific origins
 
 // --- 1. API Key and Temporary Challenge Storage (Production: Use a Database/Redis) ---
 const VALID_API_KEYS = {
-  'api-key-for-login-service': { name: 'WebApp Login Service' },
-  'api-key-for-password-reset': { name: 'Password Reset Service' },
+  [process.env.API_KEY_LOGIN_SERVICE]: { name: 'WebApp Login Service' },
+  [process.env.API_KEY_PASSWORD_RESET]: { name: 'Password Reset Service' },
 };
 
 // This store holds the correct answers temporarily.
