@@ -1,0 +1,6 @@
+/* You can leave this file empty or add global base styles if needed. */
+/* Tailwind handles most of our styling via the CDN link in index.html. */
+body {
+  background-color: #111827; /* bg-gray-900 */
+}
+
